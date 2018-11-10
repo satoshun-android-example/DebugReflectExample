@@ -4,11 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.github.satoshun.example.sample.databinding.MainActBinding
-import com.squareup.moshi.Moshi
+import com.squareup.moshi.JsonClass
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import retrofit2.Call
 import retrofit2.http.GET
 import kotlin.coroutines.CoroutineContext
 
@@ -28,9 +27,7 @@ class MainActivity : AppCompatActivity(),
 //        .build()
 //    val userApi = retrofit.create(UserApi::class.java)
 
-    val moshi = Moshi.Builder()
-//        .add(KotlinJsonAdapterFactory())
-        .build()
+    val moshi = createMoshiBuilder()
     val user = moshi
         .adapter(User::class.java)
         .fromJson(
@@ -58,10 +55,10 @@ class MainActivity : AppCompatActivity(),
 
 interface UserApi {
   @GET("user")
-  fun getUser(): Call<User>
+  fun getUser(): retrofit2.Call<User>
 }
 
-//@JsonClass(generateAdapter = true)
+@JsonClass(generateAdapter = true)
 data class User(
   val firstName: String,
   val lastName: String,
