@@ -8,7 +8,7 @@ object Vers {
 }
 
 object Libs {
-  val android_plugin = "com.android.tools.build:gradle:3.2.1"
+  val android_plugin = "com.android.tools.build:gradle:3.3.0-beta03"
   val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Vers.kotlin}"
   val versions_plugin = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
 
@@ -37,7 +37,7 @@ object Libs {
   val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:$vmoshi"
   val retrofit_moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
 
-  private val vdagger = "2.19"
+  private val vdagger = "2.18"
   val dagger = "com.google.dagger:dagger:$vdagger"
   val dagger_processor = "com.google.dagger:dagger-compiler:$vdagger"
 

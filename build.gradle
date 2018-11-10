@@ -3,10 +3,10 @@
 buildscript {
   ext.buildConfig = [
       'compileSdk': 28,
-      'minSdk': 24,
-      'targetSdk': 28,
+      'minSdk'    : 24,
+      'targetSdk' : 28,
 
-      'version': [
+      'version'   : [
           'major': 1,
           'minor': 3,
           'patch': 4,
@@ -18,106 +18,106 @@ buildscript {
   ext.buildConfig.version['code'] = buildConfig.version.major * 1000000 + buildConfig.version.minor * 10000 + buildConfig.version.patch * 100 + buildConfig.version.build
 
   ext.versions = [
-      'kotlin': '1.3.0',
-      'kotlinCoroutines': '1.0.0',
+      'kotlin'             : '1.3.0',
+      'kotlinCoroutines'   : '1.0.0',
       'kotlinSerialization': '0.9.0',
-      'okhttp': '3.11.0',
-      'retrofit': '2.4.0',
-      'kotshi': '1.0.4',
-      'dagger': '2.19',
-      'sqldelight': '1.0.0-rc2',
+      'okhttp'             : '3.11.0',
+      'retrofit'           : '2.4.0',
+      'kotshi'             : '1.0.4',
+      'dagger'             : '2.18',
+      'sqldelight'         : '1.0.0-rc2',
   ]
 
   ext.deps = [
-      'kotlin': [
-          'stdlib': [
+      'kotlin'              : [
+          'stdlib'       : [
               'common': "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
-              'jdk': "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
-              'js': "org.jetbrains.kotlin:kotlin-stdlib-js:${versions.kotlin}",
+              'jdk'   : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+              'js'    : "org.jetbrains.kotlin:kotlin-stdlib-js:${versions.kotlin}",
           ],
-          'test': [
-              'common': "org.jetbrains.kotlin:kotlin-test-common:${versions.kotlin}",
+          'test'         : [
+              'common'     : "org.jetbrains.kotlin:kotlin-test-common:${versions.kotlin}",
               'annotations': "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
-              'jdk': "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
-              'js': "org.jetbrains.kotlin:kotlin-test-js:${versions.kotlin}",
+              'jdk'        : "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
+              'js'         : "org.jetbrains.kotlin:kotlin-test-js:${versions.kotlin}",
           ],
-          'coroutines': [
-              'common': "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}",
-              'jdk': "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
-              'jdk8': "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
-              'js': "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${versions.kotlinCoroutines}",
+          'coroutines'   : [
+              'common' : "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}",
+              'jdk'    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
+              'jdk8'   : "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
+              'js'     : "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${versions.kotlinCoroutines}",
               'android': "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinCoroutines}",
           ],
           'serialization': [
               'common': "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${versions.kotlinSerialization}",
-              'jdk': "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
-              'js': "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
+              'jdk'   : "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
+              'js'    : "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
           ],
       ],
-      'androidx': [
-          'annotations': 'androidx.annotation:annotation:1.0.0',
-          'appCompat': 'androidx.appcompat:appcompat:1.0.0',
-          'browser': 'androidx.browser:browser:1.0.0',
+      'androidx'            : [
+          'annotations'     : 'androidx.annotation:annotation:1.0.0',
+          'appCompat'       : 'androidx.appcompat:appcompat:1.0.0',
+          'browser'         : 'androidx.browser:browser:1.0.0',
           'constraintLayout': 'androidx.constraintlayout:constraintlayout:1.1.3',
-          'core': 'androidx.core:core-ktx:1.0.0',
-          'recyclerView': 'androidx.recyclerview:recyclerview:1.0.0',
-          'sqliteFramework': 'androidx.sqlite:sqlite-framework:1.0.0',
-          'test': [
+          'core'            : 'androidx.core:core-ktx:1.0.0',
+          'recyclerView'    : 'androidx.recyclerview:recyclerview:1.0.0',
+          'sqliteFramework' : 'androidx.sqlite:sqlite-framework:1.0.0',
+          'test'            : [
               'runner': 'androidx.test:runner:1.1.0-alpha4',
-              'rules': 'androidx.test:rules:1.1.0-alpha4',
+              'rules' : 'androidx.test:rules:1.1.0-alpha4',
           ],
       ],
-      'material': 'com.google.android.material:material:1.0.0',
-      'okhttp': [
-          'client': "com.squareup.okhttp3:okhttp:${versions.okhttp}",
-          'logging': "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+      'material'            : 'com.google.android.material:material:1.0.0',
+      'okhttp'              : [
+          'client'       : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+          'logging'      : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
           'mockWebServer': "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
       ],
-      'retrofit': [
-          'client': "com.squareup.retrofit2:retrofit:${versions.retrofit}",
-          'adapterKotlinCoroutines': 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2',
+      'retrofit'            : [
+          'client'                       : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+          'adapterKotlinCoroutines'      : 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2',
           'converterKotlinxSerialization': 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.2.0',
-          'converterMoshi': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
+          'converterMoshi'               : "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
       ],
-      'kotshi': [
-          'api': "se.ansman.kotshi:api:${versions.kotshi}",
+      'kotshi'              : [
+          'api'     : "se.ansman.kotshi:api:${versions.kotshi}",
           'compiler': "se.ansman.kotshi:compiler:${versions.kotshi}",
       ],
-      'dagger': [
-          'runtime': "com.google.dagger:dagger:${versions.dagger}",
-          'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
-          'androidRuntime': "com.google.dagger:dagger-android:${versions.dagger}",
+      'dagger'              : [
+          'runtime'        : "com.google.dagger:dagger:${versions.dagger}",
+          'compiler'       : "com.google.dagger:dagger-compiler:${versions.dagger}",
+          'androidRuntime' : "com.google.dagger:dagger-android:${versions.dagger}",
           'androidCompiler': "com.google.dagger:dagger-android-processor:${versions.dagger}",
       ],
-      'okio': 'com.squareup.okio:okio:2.0.0',
-      'moshi': 'com.squareup.moshi:moshi:1.6.0',
-      'timber': [
-          'common': 'com.jakewharton.timber:timber-common:5.0.0-SNAPSHOT',
-          'jdk': 'com.jakewharton.timber:timber-jdk:5.0.0-SNAPSHOT',
-          'js': 'com.jakewharton.timber:timber-js:5.0.0-SNAPSHOT',
+      'okio'                : 'com.squareup.okio:okio:2.0.0',
+      'moshi'               : 'com.squareup.moshi:moshi:1.6.0',
+      'timber'              : [
+          'common' : 'com.jakewharton.timber:timber-common:5.0.0-SNAPSHOT',
+          'jdk'    : 'com.jakewharton.timber:timber-jdk:5.0.0-SNAPSHOT',
+          'js'     : 'com.jakewharton.timber:timber-js:5.0.0-SNAPSHOT',
           'android': 'com.jakewharton.timber:timber-android:5.0.0-SNAPSHOT',
       ],
-      'junit': 'junit:junit:4.12',
-      'truth': 'com.google.truth:truth:0.42',
-      'compileTesting': 'com.google.testing.compile:compile-testing:0.15',
-      'javaPoet': 'com.squareup:javapoet:1.11.1',
-      'auto': [
+      'junit'               : 'junit:junit:4.12',
+      'truth'               : 'com.google.truth:truth:0.42',
+      'compileTesting'      : 'com.google.testing.compile:compile-testing:0.15',
+      'javaPoet'            : 'com.squareup:javapoet:1.11.1',
+      'auto'                : [
           'service': 'com.google.auto.service:auto-service:1.0-rc4',
-          'value': [
+          'value'  : [
               'annotations': 'com.google.auto.value:auto-value-annotations:1.6.2',
-              'compiler': 'com.google.auto.value:auto-value:1.6.2',
+              'compiler'   : 'com.google.auto.value:auto-value:1.6.2',
           ],
       ],
       'jetbrainsAnnotations': 'org.jetbrains:annotations:16.0.3',
-      'bugsnag': 'com.bugsnag:bugsnag-android:4.2.2',
-      'argparser': 'com.xenomachina:kotlin-argparser:2.0.5',
-      'byteunits': 'com.jakewharton.byteunits:byteunits:0.9.1',
-      'sqldelight': [
+      'bugsnag'             : 'com.bugsnag:bugsnag-android:4.2.2',
+      'argparser'           : 'com.xenomachina:kotlin-argparser:2.0.5',
+      'byteunits'           : 'com.jakewharton.byteunits:byteunits:0.9.1',
+      'sqldelight'          : [
           'android': "com.squareup.sqldelight:android-driver:${versions.sqldelight}",
           'runtime': [
               'common': "com.squareup.sqldelight:runtime-metadata:${versions.sqldelight}",
-              'jdk': "com.squareup.sqldelight:runtime-jvm:${versions.sqldelight}",
-              'js': "com.squareup.sqldelight:runtime-js:${versions.sqldelight}",
+              'jdk'   : "com.squareup.sqldelight:runtime-jvm:${versions.sqldelight}",
+              'js'    : "com.squareup.sqldelight:runtime-js:${versions.sqldelight}",
           ],
       ],
   ]
@@ -125,11 +125,8 @@ buildscript {
   repositories {
     google()
     jcenter()
-    maven { url "http://dl.bintray.com/kotlin/kotlin-eap" }
-    flatDir {
-      dirs 'libs'
-    }
   }
+
   dependencies {
     classpath Libs.android_plugin
     classpath Libs.kotlin_plugin
@@ -140,7 +137,6 @@ allprojects {
   repositories {
     google()
     jcenter()
-    maven { url "http://dl.bintray.com/kotlin/kotlin-eap" }
   }
 }
 

@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity(),
     val binding = DataBindingUtil.setContentView<MainActBinding>(this, R.layout.main_act)
 
     val component = DaggerAppComponent.create()
+    component.handler().showName()
+    component.handler().showName()
+    component.handler().showName()
 
 //    val retrofit = Retrofit.Builder()
 //        .baseUrl("https://api.example.com")
