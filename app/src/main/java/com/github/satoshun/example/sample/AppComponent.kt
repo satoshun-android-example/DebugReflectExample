@@ -2,15 +2,14 @@ package com.github.satoshun.example.sample
 
 import dagger.Component
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+//@Singleton // not supported
 @Component
 interface AppComponent {
   fun handler(): UserHandlerWrapper
 }
 
-@Singleton
+//@Singleton // not supported
 class UserHandler @Inject constructor() {
   private var c: Int = 0
 
