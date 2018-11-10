@@ -1,29 +1,33 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion Vers.compile_sdk
+
   defaultConfig {
-    applicationId "com.github.satoshun.example.kotlin.parcelize"
+    applicationId "com.github.satoshun.example.sample"
 
     minSdkVersion Vers.min_sdk
     targetSdkVersion Vers.target_sdk
     versionCode 1
     versionName "1.0"
   }
+
   buildTypes {
     release {
       minifyEnabled false
+      signingConfig signingConfigs.debug
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
 
-  flavorDimensions "default"
-  productFlavors {
-    dev {
-    }
-    product {
+  signingConfigs {
+    debug {
+      storeFile rootProject.file('debug.keystore')
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+      storePassword 'android'
     }
   }
 
@@ -37,11 +41,14 @@ dependencies {
   api Libs.appcompat
   api Libs.constraintlayout
 
-  api Libs.viewmodel
-  api Libs.lifecycle_extensions
-
   api Libs.coroutine
   api Libs.ui_coroutine
+
+  implementation Libs.moshi
+  debugImplementation Libs.moshi_kt
+  kaptRelease Libs.moshi_codegen
+
+  implementation Libs.retrofit_moshi
 
   testImplementation Libs.junit
   testImplementation Libs.mockito_kotlin
@@ -50,8 +57,4 @@ dependencies {
   testImplementation Libs.test_junit_rules
   testImplementation Libs.robolectric
   testImplementation Libs.truth
-}
-
-androidExtensions {
-  experimental = true
 }

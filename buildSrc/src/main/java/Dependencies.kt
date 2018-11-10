@@ -25,18 +25,17 @@ object Libs {
 
   val material = "com.google.android.material:material:1.0.0"
   val coordinatorlayout = "androidx.coordinatorlayout:coordinatorlayout:1.0.0"
-  val paging = "androidx.paging:paging-runtime:2.0.0-rc01"
-  val navigation = "android.arch.navigation:navigation-fragment-ktx:1.0.0"
-  val navigation_ui = "android.arch.navigation:navigation-ui-ktx:1.0.0"
 
   val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
   val livedata = "androidx.lifecycle:lifecycle-livedata:2.0.0"
   val lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:2.0.0"
   val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
-  val emoji = "androidx.emoji:emoji:1.0.0"
-  val emoji_compat = "androidx.emoji:emoji-appcompat:1.0.0"
-  val emoji_bundled = "androidx.emoji:emoji-bundled:1.0.0"
+  private val vmoshi = "1.8.0"
+  val moshi = "com.squareup.moshi:moshi:$vmoshi"
+  val moshi_kt = "com.squareup.moshi:moshi-kotlin:$vmoshi"
+  val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:$vmoshi"
+  val retrofit_moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
 
   val rxjava = "io.reactivex.rxjava2:rxjava:2.2.0"
   val rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.0"
