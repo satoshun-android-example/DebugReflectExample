@@ -7,11 +7,11 @@ import javax.inject.Singleton
 @Singleton
 @Component
 interface AppComponent {
-  fun handler(): UserHanlderWrapper
+  fun handler(): UserHandlerWrapper
 }
 
 @Singleton
-class UserHanlder @Inject constructor() {
+class UserHandler @Inject constructor() {
   private var c: Int = 0
 
   fun count(): String {
@@ -20,8 +20,8 @@ class UserHanlder @Inject constructor() {
   }
 }
 
-class UserHanlderWrapper @Inject constructor(
-  private val handler: UserHanlder
+class UserHandlerWrapper @Inject constructor(
+  private val handler: UserHandler
 ) {
   fun showName() {
     println(handler.count())
