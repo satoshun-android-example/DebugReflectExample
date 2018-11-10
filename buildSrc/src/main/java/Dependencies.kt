@@ -37,6 +37,10 @@ object Libs {
   val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:$vmoshi"
   val retrofit_moshi = "com.squareup.retrofit2:converter-moshi:2.4.0"
 
+  private val vdagger = "2.19"
+  val dagger = "com.google.dagger:dagger:$vdagger"
+  val dagger_processor = "com.google.dagger:dagger-compiler:$vdagger"
+
   val rxjava = "io.reactivex.rxjava2:rxjava:2.2.0"
   val rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.0"
   val rxkotlin = "io.reactivex.rxjava2:rxkotlin:2.3.0"

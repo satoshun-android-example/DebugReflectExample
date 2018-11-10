@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity(),
     super.onCreate(savedInstanceState)
     val binding = DataBindingUtil.setContentView<MainActBinding>(this, R.layout.main_act)
 
+    val component = DaggerAppComponent.create()
+
 //    val retrofit = Retrofit.Builder()
 //        .baseUrl("https://api.example.com")
 //        .addConverterFactory(MoshiConverterFactory.create())

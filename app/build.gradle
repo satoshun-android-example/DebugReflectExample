@@ -22,6 +22,11 @@ android {
     }
   }
 
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
   signingConfigs {
     debug {
       storeFile rootProject.file('debug.keystore')
@@ -49,6 +54,11 @@ dependencies {
   kaptRelease Libs.moshi_codegen
 
   implementation Libs.retrofit_moshi
+
+  implementation Libs.dagger
+  debugImplementation project(':dagger-reflect:reflect')
+  kaptDebug project(':dagger-reflect:reflect-compiler')
+  kaptRelease Libs.dagger_processor
 
   testImplementation Libs.junit
   testImplementation Libs.mockito_kotlin
